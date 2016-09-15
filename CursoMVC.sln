@@ -3,8 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{BCA75EF7-8466-4BB7-9674-70BC0F8D367B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{098FD8DF-713E-4762-96C7-1B00335DAEAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{E375A205-6ECE-423A-976E-F7B1F9AEED58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{54E89C5A-6787-4341-A43F-4957FEA43511}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{6EE30879-4DFE-4614-A10C-99A13DC1C1F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{B7E25B13-39FA-4CEC-8DA6-E8179E017121}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{E1644ABB-5510-472F-91B4-E904AFB7CA6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLC.CursoMVC.UI.Mvc", "src\JLC.CursoMVC.UI.Mvc\JLC.CursoMVC.UI.Mvc.csproj", "{C552CAE9-47F8-46E1-B5B4-201AE38976C6}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C552CAE9-47F8-46E1-B5B4-201AE38976C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C552CAE9-47F8-46E1-B5B4-201AE38976C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C552CAE9-47F8-46E1-B5B4-201AE38976C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C552CAE9-47F8-46E1-B5B4-201AE38976C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7E25B13-39FA-4CEC-8DA6-E8179E017121} = {6EE30879-4DFE-4614-A10C-99A13DC1C1F8}
+		{E1644ABB-5510-472F-91B4-E904AFB7CA6A} = {6EE30879-4DFE-4614-A10C-99A13DC1C1F8}
+		{C552CAE9-47F8-46E1-B5B4-201AE38976C6} = {BCA75EF7-8466-4BB7-9674-70BC0F8D367B}
 	EndGlobalSection
 EndGlobal
