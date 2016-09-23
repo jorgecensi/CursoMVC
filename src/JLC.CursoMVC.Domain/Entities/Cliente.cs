@@ -9,6 +9,8 @@ namespace JLC.CursoMVC.Domain.Entities
         public Cliente()
         {
             ClienteId = Guid.NewGuid();
+            //new List - quando for necessário adicionar um novo endereço, não será necessário instanciar a coleção
+            Enderecos = new List<Endereco>();
         }
 
 

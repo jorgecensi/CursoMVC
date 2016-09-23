@@ -28,7 +28,9 @@ namespace JLC.CursoMVC.Domain.Entities
         //fk da tabela Cliente
         public Guid ClienteId { get; set; }
 
-        public Cliente Cliente { get; set; }
+        //propriedade virtual: significa que pode ser sobreescrita
+        // também utilizada para utilizar o lazyloading
+        public virtual Cliente Cliente { get; set; }
 
 
     }
