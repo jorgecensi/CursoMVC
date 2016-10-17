@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace JLC.CursoMVC.Domain.Interfaces.Repository
 {
-    public interface Irepository<TEntity> : IDisposable where TEntity : class
+    public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         TEntity Adicionar(TEntity obj);        
         TEntity OberPorId(Guid id);

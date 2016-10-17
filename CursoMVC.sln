@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLC.CursoMVC.Domain", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLC.CursoMVC.Infra.Data", "src\JLC.CursoMVC.Infra.Data\JLC.CursoMVC.Infra.Data.csproj", "{6691A34E-20B3-4369-A3AC-8596CF2B0985}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLC.CursoMvc.Application", "src\JLC.CursoMvc.Application\JLC.CursoMvc.Application.csproj", "{8B5212F5-BB14-4FF8-836E-CBFA83C1C960}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{6691A34E-20B3-4369-A3AC-8596CF2B0985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6691A34E-20B3-4369-A3AC-8596CF2B0985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6691A34E-20B3-4369-A3AC-8596CF2B0985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B5212F5-BB14-4FF8-836E-CBFA83C1C960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5212F5-BB14-4FF8-836E-CBFA83C1C960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5212F5-BB14-4FF8-836E-CBFA83C1C960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5212F5-BB14-4FF8-836E-CBFA83C1C960}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +57,6 @@ Global
 		{C552CAE9-47F8-46E1-B5B4-201AE38976C6} = {BCA75EF7-8466-4BB7-9674-70BC0F8D367B}
 		{C82A2EBE-7CB0-4E11-BE11-14BF38DEC2B6} = {54E89C5A-6787-4341-A43F-4957FEA43511}
 		{6691A34E-20B3-4369-A3AC-8596CF2B0985} = {B7E25B13-39FA-4CEC-8DA6-E8179E017121}
+		{8B5212F5-BB14-4FF8-836E-CBFA83C1C960} = {E375A205-6ECE-423A-976E-F7B1F9AEED58}
 	EndGlobalSection
 EndGlobal

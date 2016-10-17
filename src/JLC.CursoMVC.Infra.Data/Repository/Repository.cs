@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace JLC.CursoMVC.Infra.Data.Repository
 {
-    public class Repository<Tentity> : Irepository<Tentity> where Tentity : class
+    public class Repository<Tentity> : IRepository<Tentity> where Tentity : class
     {
         protected CursoMvcContext Db;
         protected DbSet<Tentity> DbSet;
