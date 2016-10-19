@@ -7,6 +7,11 @@ namespace JLC.CursoMvc.Application.ViewModels
 {
     public class ClienteViewModel
     {
+        public ClienteViewModel()
+        {
+            ClienteId = Guid.NewGuid();
+        }
+
         [Key]
         public Guid ClienteId { get; set; }
 

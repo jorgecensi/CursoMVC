@@ -6,8 +6,14 @@ namespace JLC.CursoMvc.Application.ViewModels
 {
     public class EnderecoViewModel
     {
+
+        public EnderecoViewModel()
+        {
+            EnderecoId = Guid.NewGuid();
+        }
+
         [Key]
-        public Guid EderecoId { get; set; }
+        public Guid EnderecoId { get; set; }
 
         [Required(ErrorMessage ="Preencha o campo Logradouro")]
         [MaxLength(100,ErrorMessage ="Máximo {0} caracteres")]
