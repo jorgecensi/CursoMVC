@@ -1,4 +1,5 @@
 ﻿
+using JLC.CursoMvc.Application.ViewModels;
 using JLC.CursoMVC.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,13 @@ namespace JLC.CursoMvc.Application.Interfaces
 {
     public interface IClienteAppService : IDisposable
     {
-        Cliente Adicionar(Cliente cliente);
-        Cliente OberPorId(Guid id);
-        IEnumerable<Cliente> ObterTodos();
-        Cliente Atualizar(Cliente cliente);
+        ClienteEnderecoViewModel Adicionar(ClienteEnderecoViewModel clienteEnderecoViewModel);
+        ClienteViewModel ObterPorId(Guid id);
+        IEnumerable<ClienteViewModel> ObterTodos();
+        ClienteViewModel Atualizar(ClienteViewModel clienteViewModel);
         void Remover(Guid id);
-        Cliente ObterPorCpf(string cpf);
-        Cliente ObterPorEmail(string email);
+        ClienteViewModel ObterPorCpf(string cpf);
+        ClienteViewModel ObterPorEmail(string email);
 
     }
 }

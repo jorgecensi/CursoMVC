@@ -29,5 +29,6 @@ namespace JLC.CursoMVC.UI.Mvc.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }
