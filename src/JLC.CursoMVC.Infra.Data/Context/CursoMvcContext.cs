@@ -1,8 +1,10 @@
 ﻿
 using JLC.CursoMVC.Domain.Entities;
 using JLC.CursoMVC.Infra.Data.EntityConfig;
+using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Linq;
 
 namespace JLC.CursoMVC.Infra.Data.Context
 {
@@ -47,6 +49,26 @@ namespace JLC.CursoMVC.Infra.Data.Context
 
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        public override int SaveChanges()
+        {
+            //para cada mudança no banco onde o campo é DataCadatro e estiver nula
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.GetType().GetProperty("DataCadastro") != null))
+            {
+                //Quando adicionar recebe a data do servidor
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+
+                }
+                //bloqueia alteração  caso algum lugar tentar alterar a data 
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Property("DataCadastro").IsModified = false;
+                }
+            }
+            return base.SaveChanges();
         }
 
     }
