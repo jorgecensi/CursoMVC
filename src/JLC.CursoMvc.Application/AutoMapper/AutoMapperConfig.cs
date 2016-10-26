@@ -11,16 +11,19 @@ namespace JLC.CursoMvc.Application.AutoMapper
         {
 
             //Domain to ViewModel
-            Mapper.Initialize(cfg => cfg.CreateMap<Cliente, ClienteViewModel>());
-            Mapper.Initialize(cfg => cfg.CreateMap<Cliente, ClienteEnderecoViewModel>());
-            Mapper.Initialize(cfg => cfg.CreateMap<Endereco, EnderecoViewModel>());
-            Mapper.Initialize(cfg => cfg.CreateMap<Endereco, ClienteEnderecoViewModel>());
+            Mapper.Initialize(cfg => {
+                cfg.CreateMap<Cliente, ClienteViewModel>();
+                cfg.CreateMap<Cliente, ClienteEnderecoViewModel>();
+                cfg.CreateMap<Endereco, EnderecoViewModel>();
+                cfg.CreateMap<Endereco, ClienteEnderecoViewModel>();                
 
             //ViewModel to Domain
-            Mapper.Initialize(cfg => cfg.CreateMap<ClienteViewModel, Cliente>());
-            Mapper.Initialize(cfg => cfg.CreateMap<ClienteEnderecoViewModel, Cliente>());
-            Mapper.Initialize(cfg => cfg.CreateMap<EnderecoViewModel, Endereco>());
-            Mapper.Initialize(cfg => cfg.CreateMap<ClienteEnderecoViewModel, Endereco>());
+           
+                cfg.CreateMap<ClienteViewModel, Cliente>();
+                cfg.CreateMap<ClienteEnderecoViewModel, Cliente>();
+                cfg.CreateMap<EnderecoViewModel, Endereco>();
+                cfg.CreateMap<ClienteEnderecoViewModel, Endereco>();
+                });
 
         }
     }

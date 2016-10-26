@@ -54,7 +54,7 @@ namespace JLC.CursoMVC.Infra.Data.Context
         public override int SaveChanges()
         {
             //para cada mudança no banco onde o campo é DataCadatro e estiver nula
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.GetType().GetProperty("DataCadastro") != null))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
             {
                 //Quando adicionar recebe a data do servidor
                 if (entry.State == EntityState.Added)
