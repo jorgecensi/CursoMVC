@@ -2,6 +2,8 @@
 using JLC.CursoMVC.Domain.Entities;
 using JLC.CursoMVC.Domain.Interfaces.Repository;
 using System.Linq;
+using System.Collections.Generic;
+using Dapper;
 
 namespace JLC.CursoMVC.Infra.Data.Repository
 {
@@ -18,6 +20,39 @@ namespace JLC.CursoMVC.Infra.Data.Repository
         {
             return Buscar(e => e.Email == email).FirstOrDefault();
         }
+
+        //Utilizando o Dapper para consultas
+
+
+        public override IEnumerable<Cliente> ObterTodos()
+        {
+            var cn = Db.Database.Connection;
+
+            var sql = @"SELECT * FROM Clientes";
+
+            return cn.Query<Cliente>(sql);
+
+        }
+
+        public override Cliente OberPorId(Guid id)
+        {
+            var cn = Db.Database.Connection;
+
+            var sql = @"SELECT * FROM Clientes c " +
+                         " INNER JOIN Enderecos e" +
+                        "          ON c.ClienteId = e.ClienteId " +
+                        "       WHERE c.ClienteId = @sid";
+
+            var cliente = cn.Query<Cliente, Endereco, Cliente>(sql,
+                (c, e) =>
+                {
+                    c.Enderecos.Add(e);
+                    return c;
+                }, new { sid = id }, splitOn: "ClienteId, EnderecoId");
+
+            return cliente.FirstOrDefault(); 
+        }
+
 
         ////excluir sem remover da base
         //public override void Remover(Guid id)

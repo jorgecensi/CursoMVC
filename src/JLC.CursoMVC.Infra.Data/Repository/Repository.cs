@@ -55,7 +55,7 @@ namespace JLC.CursoMVC.Infra.Data.Repository
             return DbSet.Find(id);
         }
 
-        public IEnumerable<Tentity> ObterTodos()//(int inicio, int qtd) 
+        public virtual IEnumerable<Tentity> ObterTodos()//(int inicio, int qtd) 
         {
             return DbSet.ToList(); //Take(qtd).Skip(inicio).ToList(); 
         }
