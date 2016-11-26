@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using JLC.CursoMvc.Infra.CrossCutting.MvcFilters;
+using System.Web;
 using System.Web.Mvc;
 
 namespace JLC.CursoMVC.UI.Mvc
@@ -8,6 +9,7 @@ namespace JLC.CursoMVC.UI.Mvc
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new GlobalErrorHandler());
         }
     }
 }

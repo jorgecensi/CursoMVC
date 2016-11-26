@@ -290,6 +290,10 @@
       <Project>{8b5212f5-bb14-4ff8-836e-cbfa83c1c960}</Project>
       <Name>JLC.CursoMvc.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JLC.CursoMvc.Infra.CrossCutting.MvcFilters\JLC.CursoMvc.Infra.CrossCutting.MvcFilters.csproj">
+      <Project>{43ae1ebe-ffaf-4c3a-90ac-42fce17a73f1}</Project>
+      <Name>JLC.CursoMvc.Infra.CrossCutting.MvcFilters</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
