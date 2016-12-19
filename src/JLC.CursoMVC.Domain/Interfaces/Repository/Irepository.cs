@@ -8,7 +8,7 @@ namespace JLC.CursoMVC.Domain.Interfaces.Repository
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         TEntity Adicionar(TEntity obj);        
-        TEntity OberPorId(Guid id);
+        TEntity ObterPorId(Guid id);
         IEnumerable<TEntity> ObterTodos();
         TEntity Atualizar(TEntity obj);
         void Remover(Guid id);

@@ -50,7 +50,7 @@ namespace JLC.CursoMVC.Infra.Data.Repository
             GC.SuppressFinalize(this);
         }
 
-        public virtual Tentity OberPorId(Guid id)
+        public virtual Tentity ObterPorId(Guid id)
         {
             return DbSet.Find(id);
         }
@@ -62,7 +62,7 @@ namespace JLC.CursoMVC.Infra.Data.Repository
 
         public virtual void Remover(Guid id)
         {
-            DbSet.Remove(OberPorId(id));
+            DbSet.Remove(ObterPorId(id));
             SaveChanges();
         }
 

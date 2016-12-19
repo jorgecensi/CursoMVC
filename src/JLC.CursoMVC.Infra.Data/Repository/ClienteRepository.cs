@@ -34,7 +34,7 @@ namespace JLC.CursoMVC.Infra.Data.Repository
 
         }
 
-        public override Cliente OberPorId(Guid id)
+        public override Cliente ObterPorId(Guid id)
         {
             var cn = Db.Database.Connection;
 

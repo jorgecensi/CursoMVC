@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using JLC.CursoMVC.UI.Mvc.Models;
 using JLC.CursoMvc.Application.ViewModels;
-using JLC.CursoMvc.Application;
+using JLC.CursoMvc.Application.Interfaces;
 
 namespace JLC.CursoMVC.UI.Mvc.Controllers
 {
     public class ClientesController : Controller
     {
-        private readonly ClienteAppService _clienteAppService = new ClienteAppService();
+        private readonly IClienteAppService _clienteAppService;
+
+        public ClientesController(IClienteAppService clienteAppService)
+        {
+            _clienteAppService = clienteAppService;
+        }
 
         // GET: Clientes
         public ActionResult Index()

@@ -20,7 +20,7 @@ namespace JLC.CursoMvc.Infra.CrossCutting.MvcFilters
                 filterContext.Controller.TempData["ErrorMessage"] = filterContext.Exception.Message;
 
                 //LOG de erro.... gravar em banco não relacional
-                //TODO
+                //TODO criar log de erro quando existe uma exceção
             }
 
             base.OnActionExecuted(filterContext);
