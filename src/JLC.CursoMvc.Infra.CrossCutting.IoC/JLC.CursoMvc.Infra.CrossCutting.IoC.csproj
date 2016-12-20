@@ -61,11 +61,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BootStrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JLC.CursoMvc.Application\JLC.CursoMvc.Application.csproj">
+      <Project>{8b5212f5-bb14-4ff8-836e-cbfa83c1c960}</Project>
+      <Name>JLC.CursoMvc.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JLC.CursoMVC.Domain\JLC.CursoMVC.Domain.csproj">
+      <Project>{c82a2ebe-7cb0-4e11-be11-14bf38dec2b6}</Project>
+      <Name>JLC.CursoMVC.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JLC.CursoMVC.Infra.Data\JLC.CursoMVC.Infra.Data.csproj">
+      <Project>{6691a34e-20b3-4369-a3ac-8596cf2b0985}</Project>
+      <Name>JLC.CursoMVC.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
