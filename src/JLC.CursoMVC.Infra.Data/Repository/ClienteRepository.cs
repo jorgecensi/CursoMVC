@@ -4,11 +4,18 @@ using JLC.CursoMVC.Domain.Interfaces.Repository;
 using System.Linq;
 using System.Collections.Generic;
 using Dapper;
+using JLC.CursoMVC.Infra.Data.Context;
 
 namespace JLC.CursoMVC.Infra.Data.Repository
 {
     public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
+        public ClienteRepository(CursoMvcContext context)
+            :base(context)
+        {
+
+        }
+
         public Cliente ObterPorCpf(string cpf)
         {
             //return Db.Clientes.FirstOrDefault(c => c.CPF == cpf);

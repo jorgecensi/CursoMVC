@@ -14,18 +14,17 @@ namespace JLC.CursoMVC.Infra.Data.Repository
         protected CursoMvcContext Db;
         protected DbSet<Tentity> DbSet;
 
-        public Repository()
+        public Repository(CursoMvcContext context)
         {
             //criando um atalho, para não digitar Set<Tentity>() em todo método
-            Db = new CursoMvcContext();
+            Db = context;
             DbSet = Db.Set<Tentity>();
         }
 
         public virtual Tentity Adicionar(Tentity obj)
         {
             //adiciona na memória do EF
-            var objReturn = DbSet.Add(obj);            
-            SaveChanges();
+            var objReturn = DbSet.Add(obj); 
             return objReturn;
         }
 
@@ -33,8 +32,7 @@ namespace JLC.CursoMVC.Infra.Data.Repository
         {
             var entry = Db.Entry(obj);
             DbSet.Attach(obj);
-            entry.State = EntityState.Modified;
-            SaveChanges();
+            entry.State = EntityState.Modified;           
 
             return obj;
         }
@@ -42,13 +40,7 @@ namespace JLC.CursoMVC.Infra.Data.Repository
         public IEnumerable<Tentity> Buscar(Expression<Func<Tentity, bool>> predicate)
         {
             return DbSet.Where(predicate);
-        }
-
-        public void Dispose()
-        {
-            Db.Dispose();
-            GC.SuppressFinalize(this);
-        }
+        }       
 
         public virtual Tentity ObterPorId(Guid id)
         {
@@ -62,13 +54,18 @@ namespace JLC.CursoMVC.Infra.Data.Repository
 
         public virtual void Remover(Guid id)
         {
-            DbSet.Remove(ObterPorId(id));
-            SaveChanges();
+            DbSet.Remove(ObterPorId(id));           
         }
 
         public int SaveChanges()
         {
             return Db.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            Db.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }

@@ -6,17 +6,19 @@ using JLC.CursoMVC.Infra.Data.Repository;
 using JLC.CursoMvc.Application.ViewModels;
 using AutoMapper;
 using JLC.CursoMVC.Domain.Interfaces.Services;
+using JLC.CursoMVC.Infra.Data.Interfaces;
 
 namespace JLC.CursoMvc.Application
 {
     /// <summary> Classe de serviço de aplicação que dá acesso as consultas do repositorio
     /// 
     /// </summary>    
-    public class ClienteAppService : IClienteAppService
+    public class ClienteAppService : AppService,IClienteAppService
     {
         private readonly IClienteService _clienteService;
 
-        public ClienteAppService(IClienteService clienteService)
+        public ClienteAppService(IClienteService clienteService, IUnitOfWork uow)
+            :base(uow)
         {
             _clienteService = clienteService;
         }
@@ -28,7 +30,10 @@ namespace JLC.CursoMvc.Application
 
             cliente.Enderecos.Add(endereco);
 
+            BeginTransaction();
             _clienteService.Adicionar(cliente);
+            //Se o dominio não reclamar de nada, faz o commit.
+            Commit();
 
             return clienteEnderecoViewModel;
 
