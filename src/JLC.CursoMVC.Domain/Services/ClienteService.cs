@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JLC.CursoMVC.Domain.Entities;
 using JLC.CursoMVC.Domain.Interfaces.Repository;
+using JLC.CursoMVC.Domain.Validations.Clientes;
 
 namespace JLC.CursoMVC.Domain.Services
 {
@@ -22,8 +23,16 @@ namespace JLC.CursoMVC.Domain.Services
         {
             if (!cliente.IsValid())
             {
+                cliente.ValidationResult.Message = "Não foi possível cadastrar cliente!";
                 return cliente;
             }
+            cliente.ValidationResult = new ClienteAptoParaCadastroValidation(_clienteRepository).Validate(cliente);
+            if (!cliente.ValidationResult.IsValid)
+            {
+                cliente.ValidationResult.Message = "Não foi possível cadastrar cliente!";
+                return cliente;
+            }
+            cliente.ValidationResult.Message = "Cliente cadastrado com sucesso :) ";
 
             return _clienteRepository.Adicionar(cliente);
         }
