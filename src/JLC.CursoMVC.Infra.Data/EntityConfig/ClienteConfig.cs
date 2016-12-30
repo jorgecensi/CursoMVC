@@ -39,6 +39,8 @@ namespace JLC.CursoMVC.Infra.Data.EntityConfig
                 .IsFixedLength()
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute() { IsUnique = true}));
 
+            Ignore(c => c.ValidationResult);
+
             ToTable("Clientes");
             
         }

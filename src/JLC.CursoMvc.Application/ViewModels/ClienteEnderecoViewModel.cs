@@ -44,6 +44,9 @@ namespace JLC.CursoMvc.Application.ViewModels
         [ScaffoldColumn(false)]
         public bool Ativo { get; set; }
 
+        [ScaffoldColumn(false)]
+        public DomainValidation.Validation.ValidationResult ValidationResult { get; set; }
+
 
         //Endereço
 

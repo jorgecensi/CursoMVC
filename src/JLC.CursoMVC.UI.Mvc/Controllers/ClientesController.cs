@@ -49,9 +49,19 @@ namespace JLC.CursoMVC.UI.Mvc.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ClienteEnderecoViewModel clienteEnderecoViewModel)
         {
+            //TODO Automatizar este trecho, para que possa ser usado em todas controllers
             if (ModelState.IsValid)
             {
-                _clienteAppService.Adicionar(clienteEnderecoViewModel);
+                clienteEnderecoViewModel = _clienteAppService.Adicionar(clienteEnderecoViewModel);
+                if (!clienteEnderecoViewModel.ValidationResult.IsValid)
+                {
+                    foreach (var erro in clienteEnderecoViewModel.ValidationResult.Erros)
+                    {
+                        ModelState.AddModelError(string.Empty,erro.Message);
+                    }
+                    return View(clienteEnderecoViewModel);
+                }
+
                 return RedirectToAction("Index");
             }
 

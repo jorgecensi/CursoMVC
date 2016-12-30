@@ -31,9 +31,17 @@ namespace JLC.CursoMvc.Application
             cliente.Enderecos.Add(endereco);
 
             BeginTransaction();
-            _clienteService.Adicionar(cliente);
-            //Se o dominio não reclamar de nada, faz o commit.
-            Commit();
+
+            //Validando as mensagens de erro do Dominio
+            var clienteReturn = _clienteService.Adicionar(cliente);
+            //enviando as mensagens para apresentação
+            clienteEnderecoViewModel = Mapper.Map<Cliente, ClienteEnderecoViewModel>(clienteReturn);
+
+            if (clienteReturn.ValidationResult.IsValid)
+            {
+                Commit();
+            }           
+           
 
             return clienteEnderecoViewModel;
 

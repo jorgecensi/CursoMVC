@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DomainValidation.Validation;
+using JLC.CursoMVC.Domain.Validations.Clientes;
+using System;
 using System.Collections.Generic;
 
 namespace JLC.CursoMVC.Domain.Entities
@@ -31,6 +33,14 @@ namespace JLC.CursoMVC.Domain.Entities
         //propriedade virtual: significa que pode ser sobreescrita
         // também utilizada para utilizar o lazyloading
         public virtual ICollection<Endereco> Enderecos { get; set; }
+
+        public ValidationResult ValidationResult { get; set; }
+        
+        public bool IsValid()
+        {
+            ValidationResult = new ClienteEstaConsistenteValidation().Validate(this);
+            return ValidationResult.IsValid;
+        } 
 
 
     }
