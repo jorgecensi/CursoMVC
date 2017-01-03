@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLC.CursoMvc.Infra.CrossCut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLC.CursoMvc.Domain.Tests", "tests\JLC.CursoMvc.Domain.Tests\JLC.CursoMvc.Domain.Tests.csproj", "{88D9D426-A8DF-401B-845B-1DD103CBBAE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLC.CursoMvc.Services.REST.ClienteAPI", "src\JLC.CursoMvc.Services.REST.ClienteAPI\JLC.CursoMvc.Services.REST.ClienteAPI.csproj", "{7A49FF86-6923-4498-9FE3-2F5682E5CE68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{88D9D426-A8DF-401B-845B-1DD103CBBAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88D9D426-A8DF-401B-845B-1DD103CBBAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88D9D426-A8DF-401B-845B-1DD103CBBAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A49FF86-6923-4498-9FE3-2F5682E5CE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A49FF86-6923-4498-9FE3-2F5682E5CE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A49FF86-6923-4498-9FE3-2F5682E5CE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A49FF86-6923-4498-9FE3-2F5682E5CE68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,5 +85,6 @@ Global
 		{43AE1EBE-FFAF-4C3A-90AC-42FCE17A73F1} = {E1644ABB-5510-472F-91B4-E904AFB7CA6A}
 		{AB18D788-1EC1-4671-BF0B-4354A4FBF881} = {E1644ABB-5510-472F-91B4-E904AFB7CA6A}
 		{88D9D426-A8DF-401B-845B-1DD103CBBAE8} = {54E89C5A-6787-4341-A43F-4957FEA43511}
+		{7A49FF86-6923-4498-9FE3-2F5682E5CE68} = {098FD8DF-713E-4762-96C7-1B00335DAEAE}
 	EndGlobalSection
 EndGlobal
