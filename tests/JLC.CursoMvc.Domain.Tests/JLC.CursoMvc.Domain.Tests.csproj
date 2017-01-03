@@ -39,6 +39,10 @@
       <HintPath>..\..\packages\DomainValidation.1.0.0\lib\net451\DomainValidation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -59,10 +63,9 @@
     <Compile Include="Entity\ClienteTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specification\CPFSpecification.cs" />
+    <Compile Include="Validation\ClienteAptoParaCadastroTest.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\src\JLC.CursoMVC.Domain\JLC.CursoMVC.Domain.csproj">
       <Project>{C82A2EBE-7CB0-4E11-BE11-14BF38DEC2B6}</Project>

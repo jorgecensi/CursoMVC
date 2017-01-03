@@ -15,8 +15,12 @@ namespace JLC.CursoMVC.Domain.Validations.Clientes
         public ClienteAptoParaCadastroValidation(IClienteRepository clienteRepository)
         {
             var cpfDuplicado = new ClienteDeveTerCpfUnicoSpecification(clienteRepository);
+            var emailDuplicado = new ClienteDeveTerEmailUnicoSpecification(clienteRepository);
+            var clienteEndereco = new ClienteDeveTerUmEnderecoSpecification();
 
-            base.Add("cpfDuplicado", new Rule<Cliente>(cpfDuplicado, "CPF já informado anteriormente."));
+            base.Add("cpfDuplicado", new Rule<Cliente>(cpfDuplicado, "CPF já cadastrado! Esqueceu a senha?"));
+            base.Add("emailDuplicado", new Rule<Cliente>(emailDuplicado, "E-mail já cadastrado! Esqueceu a senha?"));
+            base.Add("clienteEndereco", new Rule<Cliente>(clienteEndereco, "Cliente não informou endereço"));
         }
     }
 }
