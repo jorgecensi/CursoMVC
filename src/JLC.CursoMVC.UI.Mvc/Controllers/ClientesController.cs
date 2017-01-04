@@ -3,6 +3,7 @@ using System.Net;
 using System.Web.Mvc;
 using JLC.CursoMvc.Application.ViewModels;
 using JLC.CursoMvc.Application.Interfaces;
+using JLC.CursoMvc.Infra.CrossCutting.MvcFilters;
 
 namespace JLC.CursoMVC.UI.Mvc.Controllers
 {
@@ -112,7 +113,12 @@ namespace JLC.CursoMVC.UI.Mvc.Controllers
             }
             return View(clienteViewModel);
         }
-
+        //Incluir Cliente = CI
+        //Editar = CE
+        //Remover = CR
+        //Excluir = CX
+        //ObterTodos = CT
+        [ClaimsAuthorize("PermissoesCliente","CX")]
         // POST: Clientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
